@@ -2,15 +2,11 @@ package com.model2.mvc;
 
 import java.util.Map;
 
-import javax.jws.WebParam.Mode;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,7 +19,6 @@ import com.model2.mvc.service.PurchaseService;
 import com.model2.mvc.service.UserService;
 import com.model2.mvc.service.domain.Product;
 import com.model2.mvc.service.domain.Purchase;
-import com.model2.mvc.service.domain.User;
 
 
 //==> 회원관리 Controller

@@ -2,10 +2,11 @@ package com.model2.mvc;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -51,13 +52,14 @@ public class ProductController {
 
 	@RequestMapping(value="addProduct", method=RequestMethod.POST ) // 상품 추가
 	public String addProduct(@ModelAttribute("product") Product product, 
-			MultipartHttpServletRequest file ,Model model ) throws Exception {
+			MultipartHttpServletRequest file ,Model model, HttpServletRequest request ) throws Exception {
 
 		System.out.println("addProduct POST방식");
 					
 		List<MultipartFile> fileList = file.getFiles("file");
 		
-		String path = "C:\\workspace\\Model2MVCShop(07_URI_Pattern)\\src\\main\\webapp\\images\\uploadFiles\\";
+		String path = request.getServletContext().getRealPath("/images/uploadFiles/");
+		//String path = "C:\\workspace\\Model2MVCShop(07_URI_Pattern)\\src\\main\\webapp\\images\\uploadFiles\\";
 		//String path = "/Users/sojaeyeon/workspace/Model2MVCShop(07_URI_Pattern)/src/main/webapp/images/uploadFiles/";
 		//String path = "C:\\Users\\bitcamp\\git\\model2_07\\Model2MVCShop(07_URI_Pattern)\\src\\main\\webapp\\images\\uploadFiles\\"; // 이미지 경로 설정
 		
@@ -172,7 +174,7 @@ public class ProductController {
 
 	@RequestMapping(value="updateProduct", method=RequestMethod.POST) 
 	public String updateProduct(@ModelAttribute("product") Product product , Model model
-			, MultipartHttpServletRequest file) throws Exception{
+			, MultipartHttpServletRequest file, HttpServletRequest request) throws Exception{
 
 		System.out.println("updateProduct POST 방식");
 		
@@ -180,7 +182,8 @@ public class ProductController {
 		List<MultipartFile> fileList = file.getFiles("file");
 		System.out.println("리스트 확인 :    " + fileList);
 		
-		String path = "C:\\workspace\\Model2MVCShop(07_URI_Pattern)\\src\\main\\webapp\\images\\uploadFiles\\";
+		String path = request.getServletContext().getRealPath("/images/uploadFiles/");
+		//String path = "C:\\workspace\\Model2MVCShop(07_URI_Pattern)\\src\\main\\webapp\\images\\uploadFiles\\";
 		//String path = "/Users/sojaeyeon/workspace/Model2MVCShop(07_URI_Pattern)/src/main/webapp/images/uploadFiles/";
 		//String path = "C:\\Users\\bitcamp\\git\\model2_07\\Model2MVCShop(07_URI_Pattern)\\src\\main\\webapp\\images\\uploadFiles\\"; // 이미지 경로 설정
 		

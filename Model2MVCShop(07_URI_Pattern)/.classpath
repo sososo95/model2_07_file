@@ -18,6 +18,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-dbcp-1.4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/commons-pool-1.6"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/com.springsource.org.aspectj.weaver-1.6.8.RELEASE"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/spring-framework-5.2.5.RELEASE"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring-framework-5.2.5.RELEASE"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
